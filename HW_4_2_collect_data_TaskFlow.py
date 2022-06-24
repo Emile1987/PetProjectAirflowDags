@@ -4,14 +4,9 @@ import json
 import pandas as pd
 import pyarrow as pa
 from datetime import date
-from airflow.models import DAG
 from airflow.operators.python import PythonOperator, BranchPythonOperator
 from airflow.sensors.python import PythonSensor
 from airflow.operators.bash import BashOperator
-from airflow.providers.telegram.operators.telegram import TelegramOperator
-from airflow.utils.task_group import TaskGroup
-from airflow.providers.apache.hive.operators.hive import HiveOperator
-from airflow.providers.apache.hive.hooks.hive import HiveCliHook
 from airflow.providers.telegram.hooks.telegram import TelegramHook
 from airflow.operators.python import get_current_context
 from airflow.decorators import dag, task

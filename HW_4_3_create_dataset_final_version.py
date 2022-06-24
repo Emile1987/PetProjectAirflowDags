@@ -1,18 +1,9 @@
-import os
 import datetime as dt
-import json
-import pandas as pd
 import pyarrow as pa
-from datetime import date
 from airflow.models import DAG
-from airflow.operators.python import PythonOperator, BranchPythonOperator
 from airflow.sensors.python import PythonSensor
-from airflow.sensors.external_task import ExternalTaskSensor
 from airflow.operators.bash import BashOperator
 from airflow.providers.telegram.operators.telegram import TelegramOperator
-from airflow.utils.task_group import TaskGroup
-from airflow.providers.apache.hive.operators.hive import HiveOperator
-
 
 default_args = {
     'owner': 'Emil_Egiazarov',
